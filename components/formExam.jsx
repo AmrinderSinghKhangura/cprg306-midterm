@@ -15,8 +15,9 @@ const FormExam = () => {
   };
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     if (fullname === "") {
-      setFullname(firstname + " " + surname);
+      setFullname(`$Amrinder ${surname}`);
     } else {
       setFullname("");
     }

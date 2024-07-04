@@ -7,11 +7,12 @@ const InteractivityExam = ({ list }) => {
 
   useEffect(() => {
     setWord((prevName) => prevName.toUpperCase());
-  }, []);
+    console.log(word);
+  }, [word]);
 
   const handleNameChange = (event) => {
     setWord(event.target.value);
-    getWord();
+    console.log(word);
   };
 
   const handleSubmit = (event) => {
@@ -19,7 +20,9 @@ const InteractivityExam = ({ list }) => {
   };
 
   const getWord = () => {
+    console.log(word);
     setWord(word + "t");
+    console.log(word);
   };
 
   return (

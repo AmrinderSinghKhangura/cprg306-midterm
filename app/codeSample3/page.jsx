@@ -5,6 +5,14 @@ import APICallExam from "@/components/apiCallExam";
 const CodeSample3 = () => {
   const myList = ["Cat", "Dog", "Chicken", "Cow"];
 
+  async function callUrl() {
+    const r = await fetch(
+      "https://webdev2-class-demo.vercel.app/api/sampleReqs/ehen2rfow"
+    );
+    const data = await r.json();
+    console.log(data);
+  }
+
   return (
     <div className="h-screen bg-white p-2 text-black">
       <h1 className="pb-2 text-blue-600">Code sample 3: Making an API Call</h1>
@@ -23,7 +31,7 @@ const CodeSample3 = () => {
       </div>
 
       <div className="p-4">
-        <APICallExam list={myList} />
+        <APICallExam secretCodeFunction={callUrl} />
       </div>
     </div>
   );
